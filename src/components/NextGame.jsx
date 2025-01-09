@@ -21,7 +21,6 @@ const NextGame = () => {
                         throw new Error('Network Response error.');
                     }
                     const data = await response.json();
-                    console.log(data);
                 };
 
                 fetchNextGame();

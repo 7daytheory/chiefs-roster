@@ -17,11 +17,9 @@ const Listing = ( {player}) => {
                 <div className='text-gray-600 my-2'>{FirstName}</div>
                 <h3 className='text-xl font-bold'>{LastName}</h3>
             </div>
-            <p className="italic text-sm">{headshotCheck.includes("http://cdn.usatsimg.com") ? "Paid API Users get Headshots only, but there WOULD have been a headshot here(lol)" : "This person has no headshot anyway" }</p>
+            <p className="italic text-sm text-center">{headshotCheck.includes("http://cdn.usatsimg.com") ? "Only *paid* API Users get the player headshots only(sorry!)." : "This person has no headshot." }</p>
             <div className='mb-5 flex justify-center'>
-                <img src={noHeadshot} alt="Headshot" className="flex justify-center mb-2 mt-2 h-[200px]"/>
-                {console.log("Headshot Check : " + headshotCheck)}
-               
+                <img src={noHeadshot} alt="Headshot" className="flex justify-center mb-2 mt-2 h-[200px]"/>               
             </div>
             <button onClick={() => setShowMore((prevState) => !prevState)} className="text-red-500 mb-5 hover:text-red-600">Show {showMore ? 'less' : 'more'}</button>
             {showMore && (
