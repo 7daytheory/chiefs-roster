@@ -8,7 +8,7 @@ const Listing = ( {player}) => {
 
   let { FirstName, LastName, Height, Weight, Position, College, UsaTodayHeadshotNoBackgroundUrl, id} = player;
 
-  let headshot = UsaTodayHeadshotNoBackgroundUrl || noHeadshot;
+  let headshotCheck = UsaTodayHeadshotNoBackgroundUrl || noHeadshot;
   
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
@@ -17,8 +17,11 @@ const Listing = ( {player}) => {
                 <div className='text-gray-600 my-2'>{FirstName}</div>
                 <h3 className='text-xl font-bold'>{LastName}</h3>
             </div>
+            <p className="italic text-sm">{headshotCheck.includes("http://cdn.usatsimg.com") ? "Paid API Users get Headshots only, but there WOULD have been a headshot here(lol)" : "This person has no headshot anyway" }</p>
             <div className='mb-5 flex justify-center'>
-                <img src={headshot} alt="Headshot" className="flex justify-center mb-2 mt-2 h-[200px]"/>
+                <img src={noHeadshot} alt="Headshot" className="flex justify-center mb-2 mt-2 h-[200px]"/>
+                {console.log("Headshot Check : " + headshotCheck)}
+               
             </div>
             <button onClick={() => setShowMore((prevState) => !prevState)} className="text-red-500 mb-5 hover:text-red-600">Show {showMore ? 'less' : 'more'}</button>
             {showMore && (
