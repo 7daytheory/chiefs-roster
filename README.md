@@ -1,5 +1,7 @@
 # React + Vite
 
+I'm just using the free version of this API so I don't get a lot of the features like player photos, live stats and scores, etc
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
